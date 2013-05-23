@@ -3,7 +3,7 @@ morph-starter
 
 Getting started with morph. this project is a simple Java (and Scala) demo of how to use morph.
 
-Currently it shows how to generate RDF data from relational databases, using an [R2RML http://www.w3.org/TR/r2rml/] mapping.
+Currently it shows how to generate RDF data from relational databases, using an [R2RML](http://www.w3.org/TR/r2rml/) mapping.
 
 **Requirements**
 * Java7
