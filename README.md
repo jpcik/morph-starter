@@ -9,6 +9,8 @@ Currently it shows how to generate RDF data from relational databases, using an 
 * Java7
 * Sbt (or maven)
 
+**Running**
+
 To run the example, download the code and run Sbt:
 
 ```
@@ -35,3 +37,4 @@ If you plan to use Scala we recommend installing the Scala IDE plugin.
 **Maven**
 
 If you prefer to use maven instead of sbt, there is a pom.xml file available. Otherwise you can just ignore its existence.
+You can compile the code as usual: `mvn compile`, import it to Eclipse using the m2e plugin, etc.
