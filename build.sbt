@@ -28,7 +28,7 @@ EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource
 
 //javacOptions ++= Seq("-source", "1.7", "-target", "1.6")
 
-
+mainClass := Some("es.upm.fi.oeg.morph.DemoQueryJava")
 
 
 

@@ -52,7 +52,7 @@ public class DemoQueryJava {
     RiotWriter.writeNQuads(System.out,ds.asDatasetGraph());  
   }
   
-  public static void main(String[] args){
+  public static final void main(String[] args){
 	DemoQueryJava dqj = new DemoQueryJava();
 	dqj.generate("data/d005/r2rmla.ttl");		    	    
   }
