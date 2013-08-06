@@ -9,14 +9,14 @@ scalaVersion := "2.10.1"
 crossPaths := false
 
 libraryDependencies ++= Seq(
-  "es.upm.fi.oeg.morph" % "morph-core" % "1.0.3",
-  "es.upm.fi.oeg.morph" % "morph-querygen" % "1.0.3",
- "es.upm.fi.oeg.morph" % "morph-r2rml-tc" % "1.0.2" intransitive,
+  //"es.upm.fi.oeg.morph" % "morph-core" % "1.0.3",
+  "es.upm.fi.oeg.morph" % "morph-querygen" % "1.0.4",
+  "es.upm.fi.oeg.morph" % "morph-r2rml-tc" % "1.0.3" intransitive,
   "org.scalatest" % "scalatest_2.10" % "1.9.1" % "test",
-  "org.scalacheck" % "scalacheck_2.10" % "1.10.0" % "test",
-  "com.typesafe.akka" %% "akka-actor" % "2.1.2",
-  "com.typesafe.akka" %% "akka-remote" % "2.1.2",
-  "com.typesafe.akka" %% "akka-kernel" % "2.1.2"
+  "org.scalacheck" % "scalacheck_2.10" % "1.10.0" % "test"
+  //"com.typesafe.akka" %% "akka-actor" % "2.1.2",
+  //"com.typesafe.akka" %% "akka-remote" % "2.1.2",
+  //"com.typesafe.akka" %% "akka-kernel" % "2.1.2"
 )
 
 resolvers ++= Seq(

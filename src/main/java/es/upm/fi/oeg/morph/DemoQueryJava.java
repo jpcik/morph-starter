@@ -1,14 +1,12 @@
 package es.upm.fi.oeg.morph;
 
-import java.util.Properties;
 
 import org.apache.jena.riot.RiotWriter;
 
 import com.hp.hpl.jena.query.Dataset;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 
-import es.upm.fi.oeg.morph.execute.RdfGenerator;
-import es.upm.fi.oeg.morph.r2rml.R2rmlReader;
-import es.upm.fi.oeg.morph.relational.JDBCRelationalModel;
 import es.upm.fi.oeg.morph.relational.RelationalModel;
 import es.upm.fi.oeg.morph.tc.DBManager;
 import es.upm.fi.oeg.siq.tools.ParameterUtils;
@@ -19,14 +17,13 @@ import es.upm.fi.oeg.siq.tools.ParameterUtils;
  *
  */
 public class DemoQueryJava {
-  Properties props=ParameterUtils.load(this.getClass().getResourceAsStream("/conf/config.properties"));
+  Config conf = ConfigFactory.load().getConfig("morph");
   RelationalModel relat;
   DBManager db;
   
   DemoQueryJava(){
-	relat=new JDBCRelationalModel(props);
-	db=new DBManager(props.getProperty("jdbc.driver"),props.getProperty("jdbc.source.url"),
-		      props.getProperty("jdbc.source.user"),props.getProperty("jdbc.source.password"),false);
+	db=new DBManager(conf.getString("jdbc.driver"),conf.getString("jdbc.source.url"),
+			conf.getString("jdbc.source.user"),conf.getString("jdbc.source.password"),false);
   }
   
   /**
@@ -46,9 +43,8 @@ public class DemoQueryJava {
    */
   public void generate(String mappingFile){
 	createDB();  
-	R2rmlReader reader=new R2rmlReader(mappingFile);    
-	RdfGenerator g=new RdfGenerator(reader,relat);
-	Dataset ds=g.generate();
+	Morph morph=new Morph();
+	Dataset ds=morph.generateJdbc(mappingFile);
     RiotWriter.writeNQuads(System.out,ds.asDatasetGraph());  
   }
   
