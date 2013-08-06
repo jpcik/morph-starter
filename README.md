@@ -22,7 +22,7 @@ The RDF is output to the console.
 You can check the `DemoQueryJava` file to tweak and change whaterver you want.
 
 The script to create the test DB (.sql) and the mappings (.r2rml) are is in `src/main/resources/data`. 
-The database jdbc config is in `src/main/resources/conf/conf.properties`
+The database jdbc config is in `src/main/resources/application.conf`
 
 **Eclipse**
 
