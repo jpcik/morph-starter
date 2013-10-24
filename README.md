@@ -7,7 +7,7 @@ Currently it shows how to generate RDF data from relational databases, using an 
 
 **Requirements**
 * Java7
-* Sbt (or maven)
+* Sbt 0.13 (or maven)
 
 **Running**
 
