@@ -2,21 +2,16 @@ name := "morph-starter"
 
 organization := "es.upm.fi.oeg.morph"
 
-version := "0.0.1"
+version := "0.0.2"
 
-scalaVersion := "2.10.1"
+scalaVersion := "2.10.3"
 
 crossPaths := false
 
 libraryDependencies ++= Seq(
-  //"es.upm.fi.oeg.morph" % "morph-core" % "1.0.3",
-  "es.upm.fi.oeg.morph" % "morph-querygen" % "1.0.4",
-  "es.upm.fi.oeg.morph" % "morph-r2rml-tc" % "1.0.3" intransitive,
-  "org.scalatest" % "scalatest_2.10" % "1.9.1" % "test",
-  "org.scalacheck" % "scalacheck_2.10" % "1.10.0" % "test"
-  //"com.typesafe.akka" %% "akka-actor" % "2.1.2",
-  //"com.typesafe.akka" %% "akka-remote" % "2.1.2",
-  //"com.typesafe.akka" %% "akka-kernel" % "2.1.2"
+  "es.upm.fi.oeg.morph" % "morph-querygen" % "1.0.6",
+  "es.upm.fi.oeg.morph" % "morph-r2rml-tc" % "1.0.6" intransitive,
+  "org.scalatest" % "scalatest_2.10" % "2.0.RC1" % "test"
 )
 
 resolvers ++= Seq(

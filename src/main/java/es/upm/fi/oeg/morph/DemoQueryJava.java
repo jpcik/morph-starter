@@ -1,7 +1,8 @@
 package es.upm.fi.oeg.morph;
 
 
-import org.apache.jena.riot.RiotWriter;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 
 import com.hp.hpl.jena.query.Dataset;
 import com.typesafe.config.Config;
@@ -21,7 +22,7 @@ public class DemoQueryJava {
   RelationalModel relat;
   DBManager db;
   
-  DemoQueryJava(){
+  public DemoQueryJava(){
 	db=new DBManager(conf.getString("jdbc.driver"),conf.getString("jdbc.source.url"),
 			conf.getString("jdbc.source.user"),conf.getString("jdbc.source.password"),false);
   }
@@ -45,11 +46,11 @@ public class DemoQueryJava {
 	createDB();  
 	Morph morph=new Morph();
 	Dataset ds=morph.generateJdbc(mappingFile);
-    RiotWriter.writeNQuads(System.out,ds.asDatasetGraph());  
+    RDFDataMgr.write(System.out,ds.asDatasetGraph(),Lang.NQUADS);  
   }
   
   public static final void main(String[] args){
-	DemoQueryJava dqj = new DemoQueryJava();
+	DemoQueryJava dqj = new DemoQueryJava();	
 	dqj.generate("data/d005/r2rmla.ttl");		    	    
   }
 }
